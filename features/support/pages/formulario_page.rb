@@ -11,15 +11,23 @@ class Formulario < SitePrism::Page
   element :clicar_btn, 'input[name=commit]'
   element :validacao_msg, '#notice'
 
-  def cadastrar
+  def dados_cadastrais
     name_txt.set 'Renata'
     lastaname_txt.set 'Pereira'
     email_txt.set 'renata.pereira@gmail.com'
     addres_txt.set 'Rotary'
+  end
+
+  def dados_extras
     universyti_txt.set 'Metodista'
     profession_txt.set 'QA'
     gender_txt.set 'Feminino'
     age_txt.set '27'
-    clicar_btn.click
+
+  end
+  def cadastrar
+   dados_cadastrais
+   dados_extras
+   clicar_btn.click
   end
 end
